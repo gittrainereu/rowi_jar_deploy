@@ -23,7 +23,12 @@ jobs:
         run: mvn clean package
 
       - name: Copy JAR to Aya-GlassFish via SCP
-        run: |
-          ls -la
-          cd target
-          ls -la 
+        uses: appleboy/scp-action@v1
+        with:
+          host: 164.92.167.148
+          username: tln10
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "target/*.jar"
+# hier bitte eure eigene tln-nr statt tln1 eintragen 
+          target: "/home/tln10/"
