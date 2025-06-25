@@ -32,3 +32,5 @@ jobs:
           source: "target/*.jar"
 # hier bitte eure eigene tln-nr statt tln1 eintragen 
           target: "/home/tln10/"
+
+          
